@@ -23,8 +23,10 @@ public class LinkedList<T> implements List<T> {
             size++;
         } else {
             Node previous = head;
-            while (previous.next != null)
+            while (previous.next != null){
                 previous=previous.next;
+            }
+
             Node current = new Node(item);
             previous.next = current;
             size++;
@@ -33,8 +35,9 @@ public class LinkedList<T> implements List<T> {
 
     @Override
     public void add(int position, T item) {
-        if (position < 0 || position > size)
+        if (position < 0 || position > size){
             throw new RuntimeException();
+        }
 
         if (position == 0){
             Node current = new Node(item);
@@ -66,8 +69,9 @@ public class LinkedList<T> implements List<T> {
 
     @Override
     public T remove(int position) {
-        if (position < 0 || position >= size)
+        if (position < 0 || position >= size){
             throw new RuntimeException();
+        }
 
         if (position == 0){
             T item = (T) head.data;
